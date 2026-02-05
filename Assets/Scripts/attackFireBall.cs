@@ -5,11 +5,11 @@ public class EnemyBarrageShooter3D : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Transform muzzle;
+    [SerializeField] private Transform muzzle;//ПeМы
 
     [Header("Barrage")]
-    [SerializeField] private int bulletsPerWave = 50;
-    [SerializeField] private float wavesPerSecond = 3f;
+    [SerializeField] private int bulletsPerWave = 1;
+    [SerializeField] private float wavesPerSecond = 1f;
     [SerializeField] private float bulletSpeed = 12f;
 
     [Header("Y constraint")]
