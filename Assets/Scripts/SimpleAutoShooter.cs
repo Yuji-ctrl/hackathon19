@@ -31,7 +31,7 @@ public class SimpleAutoShooter : MonoBehaviour
             {
                 rb.useGravity = false; // 重力無効（まっすぐ飛ばすため）
                 // Unity 6以降は linearVelocity、古いバージョンは velocity
-                rb.linearVelocity = originTransform.forward * speed;
+                rb.linearVelocity = originTransform.right * speed;
             }
 
             // 4. 指定時間待つ（1秒）
