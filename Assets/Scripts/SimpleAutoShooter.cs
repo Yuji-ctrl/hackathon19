@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class SimpleAutoShooter : MonoBehaviour
 {
-    [Header("İ’è")]
-    [SerializeField] private GameObject bulletPrefab; // ’e‚ÌPrefab
-    [SerializeField] private Transform muzzle;        // ”­ËˆÊ’ui‹ó‚È‚ç©•ª‚ÌˆÊ’uj
-    [SerializeField] private float speed = 15f;       // ’e‚Ì‘¬‚³
-    [SerializeField] private float interval = 1.0f;   // ”­ËŠÔŠui•bj
+    [Header("ï¿½İ’ï¿½")]
+    [SerializeField] private GameObject bulletPrefab; // ï¿½eï¿½ï¿½Prefab
+    [SerializeField] private Transform muzzle;        // ï¿½ï¿½ï¿½ËˆÊ’uï¿½iï¿½ï¿½È‚ç©ï¿½ï¿½ï¿½ÌˆÊ’uï¿½j
+    [SerializeField] private float speed = 500f;       // ï¿½eï¿½Ì‘ï¿½ï¿½ï¿½
+    [SerializeField] private float interval = 3.0f;   // ï¿½ï¿½ï¿½ËŠÔŠuï¿½iï¿½bï¿½j
 
     private void OnEnable()
     {
-        // ƒIƒuƒWƒFƒNƒg‚ª—LŒø‚É‚È‚Á‚½‚ç”­Ëƒ‹[ƒv‚ğŠJn
+        // ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½É‚È‚ï¿½ï¿½ï¿½ï¿½ç”­ï¿½Ëƒï¿½ï¿½[ï¿½vï¿½ï¿½ï¿½Jï¿½n
         StartCoroutine(ShootLoop());
     }
 
@@ -19,22 +19,24 @@ public class SimpleAutoShooter : MonoBehaviour
     {
         while (true)
         {
-            // 1. ”­ËˆÊ’u‚ğŒˆ‚ß‚éimuzzle‚ª–¢İ’è‚È‚ç©•ª‚ÌˆÊ’uj
+            // 1. ï¿½ï¿½ï¿½ËˆÊ’uï¿½ï¿½ï¿½ï¿½ï¿½ß‚ï¿½imuzzleï¿½ï¿½ï¿½ï¿½ï¿½İ’ï¿½È‚ç©ï¿½ï¿½ï¿½ÌˆÊ’uï¿½j
             Transform originTransform = (muzzle != null) ? muzzle : transform;
 
-            // 2. ’e‚ğ¶¬iˆÊ’u‚Æ‰ñ“]‚Í”­ËŒû‚É‡‚í‚¹‚éj
+            // 2. ï¿½eï¿½ğ¶ï¿½ï¿½iï¿½Ê’uï¿½Æ‰ï¿½]ï¿½Í”ï¿½ï¿½ËŒï¿½ï¿½Éï¿½ï¿½í‚¹ï¿½ï¿½j
             GameObject bullet = Instantiate(bulletPrefab, originTransform.position, originTransform.rotation);
 
-            // 3. ‘O•ûiÂ‚¢–îˆó‚Ì•ûŒüj‚Ö”ò‚Î‚·
+            // 3. ï¿½Oï¿½ï¿½ï¿½iï¿½Â‚ï¿½ï¿½ï¿½ï¿½Ì•ï¿½ï¿½ï¿½ï¿½jï¿½Ö”ï¿½Î‚ï¿½
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                rb.useGravity = false; // d—Í–³Œøi‚Ü‚Á‚·‚®”ò‚Î‚·‚½‚ßj
-                // Unity 6ˆÈ~‚Í linearVelocityAŒÃ‚¢ƒo[ƒWƒ‡ƒ“‚Í velocity
+                rb.useGravity = false; // ï¿½dï¿½Í–ï¿½ï¿½ï¿½ï¿½iï¿½Ü‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î‚ï¿½ï¿½ï¿½ï¿½ßj
+                // Unity 6ï¿½È~ï¿½ï¿½ linearVelocityï¿½Aï¿½Ã‚ï¿½ï¿½oï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ velocity
+                //rb.linearVelocity = originTransform.right * speed;
                 rb.linearVelocity = originTransform.right * speed;
+
             }
 
-            // 4. w’èŠÔ‘Ò‚Âi1•bj
+            // 4. ï¿½wï¿½èï¿½Ô‘Ò‚Âi1ï¿½bï¿½j
             yield return new WaitForSeconds(interval);
         }
     }
