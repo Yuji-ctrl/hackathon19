@@ -7,8 +7,9 @@ public class Food : MonoBehaviour
     public FoodConfig Config { get; private set; }
     IFoodService foodService;
 
-    [SerializeField] float detectRadius = 3f;
-    [SerializeField] float resultSpreadRadius = 2f;
+    [SerializeField] float detectRadius = 1f;
+    [SerializeField] float resultSpreadRadius = 1f;
+
 
     public void Initialize(FoodConfig config, IFoodService service)
     {

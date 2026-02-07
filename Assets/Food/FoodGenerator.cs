@@ -13,6 +13,8 @@ public class CookConfig{
 public class FoodConfig
 {
     public string name;
+    public bool isNatural;
+    public float attack;
 }
 
 [System.Serializable]
@@ -63,10 +65,12 @@ public class FoodGenerator : MonoBehaviour, IFoodService
         }
     }
 
-    public Food Generate()
+    public Food GenerateNatural()
     {
         var food = Instantiate(foodPrefab);
-        var randomConfig = config.foods[Random.Range(0, config.foods.Length)];
+        var naturalFoods = System.Array.FindAll(config.foods, f => f.isNatural);
+        if (naturalFoods.Length == 0) return null;
+        var randomConfig = naturalFoods[Random.Range(0, naturalFoods.Length)];
         food.Initialize(randomConfig, this);
         return food;
     }

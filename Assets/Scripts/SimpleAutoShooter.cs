@@ -34,7 +34,7 @@ public class SimpleAutoShooter : MonoBehaviour
 #if UNITY_6_0_OR_NEWER
                 rb.linearVelocity = originTransform.right * speed;
 #else
-                rb.velocity = originTransform.right * speed;  // ← これが正解
+                rb.linearVelocity = originTransform.right * speed;  // ← これが正解
 #endif
             }
             else

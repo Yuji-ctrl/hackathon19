@@ -58,18 +58,30 @@ public class MockPlayer : MonoBehaviour
     private void HandleFoodInteraction()
     {
         // スペースキー入力を検出
-        if (!Input.GetKeyDown(KeyCode.Space))
-            return;
-
-        if (heldFood == null)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            // Foodを拾い上げる
-            PickupFood();
+            if (heldFood == null)
+            {
+                // Foodを拾い上げる
+                PickupFood();
+            }
+            else
+            {
+                // Foodを設置して、その場所のFoodに"Mix"アクションを発火
+                PlaceFood();
+            }
         }
-        else
+
+        // Enterキー入力を検出
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            // Foodを設置して、その場所のFoodに"Mix"アクションを発火
-            PlaceFood();
+            if (heldFood != null)
+            {
+                // 手に持っている食べ物を破壊
+                Destroy(heldFood.gameObject);
+                Debug.Log($"Foodを破壊しました: {heldFood.Config.name}");
+                heldFood = null;
+            }
         }
     }
 
