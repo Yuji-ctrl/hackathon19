@@ -10,6 +10,7 @@ public class Food : MonoBehaviour
     [SerializeField] float detectRadius = 1f;
     [SerializeField] float resultSpreadRadius = 1f;
     [SerializeField] float modelScale = 1f;
+    [SerializeField] float generateDelay = 0.5f;
 
 
     public void Initialize(FoodConfig config, IFoodService service)
@@ -27,13 +28,13 @@ public class Food : MonoBehaviour
     /// <summary>
     /// アクションを受けた時に呼ぶ。該当レシピがあれば材料を消滅させ成果物を生成する。
     /// </summary>
-    public List<Food> ReceiveAction(string action)
+    public void ReceiveAction(string action)
     {
-        if (foodService == null) return null;
+        if (foodService == null) return;
 
         // 辞書引きで O(1) ルックアップ
         var candidateRecipes = foodService.GetRecipesFor(action, Config.name);
-        if (candidateRecipes.Count == 0) return null;
+        if (candidateRecipes.Count == 0) return;
 
         // 近くのFoodはループの外で1回だけ取得
         var nearbyFoods = FindNearbyFoods();
@@ -42,23 +43,33 @@ public class Food : MonoBehaviour
         {
             if (!TryMatchRecipe(recipe, nearbyFoods, out var matchedFoods)) continue;
 
+            // 位置を保存
+            Vector3 basePosition = transform.position;
+
             // 材料を全て消滅
             foreach (var mat in matchedFoods)
                 Destroy(mat.gameObject);
 
-            // 成果物を材料の位置に生成（xz平面のランダムオフセット付き）
-            return recipe.resultFoods
-                .Select((name, index) => 
-                {
-                    Vector2 randomDir = Random.insideUnitCircle.normalized;
-                    Vector3 offset = new Vector3(randomDir.x, 0f, randomDir.y) * resultSpreadRadius;
-                    Vector3 spawnPos = transform.position + offset;
-                    return foodService.GenerateByName(name, spawnPos);
-                })
-                .Where(f => f != null)
-                .ToList();
+            // serviceのMonoBehaviourでコルーチンを実行
+            if (foodService is MonoBehaviour mb)
+            {
+                mb.StartCoroutine(GenerateAfterDelay(recipe.resultFoods, basePosition));
+            }
+            return;
         }
-        return null;
+    }
+
+    System.Collections.IEnumerator GenerateAfterDelay(string[] resultFoods, Vector3 basePosition)
+    {
+        yield return new WaitForSeconds(generateDelay);
+
+        foreach (var name in resultFoods)
+        {
+            Vector2 randomDir = Random.insideUnitCircle.normalized;
+            Vector3 offset = new Vector3(randomDir.x, 0f, randomDir.y) * resultSpreadRadius;
+            Vector3 spawnPos = basePosition + offset;
+            foodService.GenerateByName(name, spawnPos);
+        }
     }
 
     List<Food> FindNearbyFoods()

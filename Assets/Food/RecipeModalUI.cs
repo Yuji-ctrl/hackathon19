@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 /// <summary>
 /// レシピ表示UI。手に持っている食材の関連レシピを自動表示する。
@@ -37,7 +38,9 @@ public class RecipeModalUI : MonoBehaviour
         contentParent.gameObject.SetActive(true);
 
         var recipes = navigator.GetDirectRecipes(food.Config.name);
-        foreach (var recipe in recipes)
+        // 材料が多い順にソート
+        var sortedRecipes = recipes.OrderByDescending(r => r.materialFoods.Length).ToList();
+        foreach (var recipe in sortedRecipes)
         {
             var go = Instantiate(recipeItemPrefab, contentParent);
             spawnedItems.Add(go);

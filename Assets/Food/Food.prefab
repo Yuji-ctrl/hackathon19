@@ -48,6 +48,7 @@ MonoBehaviour:
   detectRadius: 1
   resultSpreadRadius: 0.1
   modelScale: 0.3
+  generateDelay: 0.1
 --- !u!135 &4251615072081600726
 SphereCollider:
   m_ObjectHideFlags: 0

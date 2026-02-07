@@ -127,11 +127,7 @@ public class MockPlayer : MonoBehaviour
         
         // 設置したFoodに"Mix"アクションを発火
         // （周辺のFood検索やマッチングはReceiveAction内で実行）
-        var results = heldFood.ReceiveAction("Mix");
-        if (results != null && results.Count > 0)
-        {
-            Debug.Log($"Mix成功: {heldFood.Config.name}が反応しました");
-        }
+        heldFood.ReceiveAction("Mix");
 
         Debug.Log($"Foodを設置しました: {heldFood.Config.name}");
         heldFood = null;

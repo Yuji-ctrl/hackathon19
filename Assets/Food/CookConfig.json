@@ -134,9 +134,214 @@
       "name": "Milk",
       "isNatural": true,
       "attack": 5
+    },
+    {
+      "name": "Batter",
+      "isNatural": false,
+      "attack": 1
+    },
+    {
+      "name": "MeatMince",
+      "isNatural": false,
+      "attack": 2
+    },
+    {
+      "name": "Sausage",
+      "isNatural": false,
+      "attack": 15
+    },
+    {
+      "name": "CornDogRaw",
+      "isNatural": false,
+      "attack": 5
+    },
+    {
+      "name": "CornDog",
+      "isNatural": false,
+      "attack": 40
+    },
+    {
+      "name": "CornDogPerfect",
+      "isNatural": false,
+      "attack": 80
+    },
+    {
+      "name": "EggBaked",
+      "isNatural": false,
+      "attack": 10
+    },
+    {
+      "name": "Patty",
+      "isNatural": false,
+      "attack": 15
+    },
+    {
+      "name": "Hamburger",
+      "isNatural": false,
+      "attack": 40
+    },
+    {
+      "name": "CurryMeat",
+      "isNatural": false,
+      "attack": 20
+    },
+    {
+      "name": "Stew",
+      "isNatural": false,
+      "attack": 30
+    },
+    {
+      "name": "Tomato",
+      "isNatural": true,
+      "attack": 1
+    },
+    {
+      "name": "TomatoCut",
+      "isNatural": false,
+      "attack": 5
+    },
+    {
+      "name": "TomatoPaste",
+      "isNatural": false,
+      "attack": 5
+    },
+    {
+      "name": "TomatoRice",
+      "isNatural": false,
+      "attack": 30
+    },
+    {
+      "name": "Omurice",
+      "isNatural": false,
+      "attack": 50
+    },
+    {
+      "name": "EggBeaten",
+      "isNatural": false,
+      "attack": 5
+    },
+    {
+      "name": "Omelet",
+      "isNatural": false,
+      "attack": 10
+    },
+    {
+      "name": "Cake",
+      "isNatural": false,
+      "attack": 30
+    },
+    {
+      "name": "ShortCake",
+      "isNatural": false,
+      "attack": 50
+    },
+    {
+      "name": "Cream",
+      "isNatural": false,
+      "attack": 10
     }
   ],
   "recipes": [
+    {
+      "materialFoods": ["Milk"],
+      "action": "Cut",
+      "resultFoods": ["Cream"]
+    },
+    {
+      "materialFoods": ["Batter"],
+      "action": "Bake",
+      "resultFoods": ["Cake"]
+    },
+    {
+      "materialFoods": ["Cake","Cream","Apple"],
+      "action": "Mix",
+      "resultFoods": ["ShortCake"]
+    },
+    {
+      "materialFoods": ["Egg"],
+      "action": "Cut",
+      "resultFoods": ["EggBeaten"]
+    },
+    {
+      "materialFoods": ["EggBeaten"],
+      "action": "Bake",
+      "resultFoods": ["Omelet"]
+    },
+    {
+      "materialFoods": ["Tomato"],
+      "action": "Cut",
+      "resultFoods": ["TomatoCut"]
+    },
+    {
+      "materialFoods": ["TomatoCut"],
+      "action": "Cut",
+      "resultFoods": ["TomatoPaste"]
+    },
+    {
+      "materialFoods": ["RiceBall", "TomatoPaste", "MeatCutBaked", "OnionCut", "CarrotCut"],
+      "action": "Bake",
+      "resultFoods": ["TomatoRice"]
+    },
+    {
+      "materialFoods": ["TomatoRice", "Omelet"],
+      "action": "Mix",
+      "resultFoods": ["Omurice"]
+    },
+    {
+      "materialFoods": ["CurryMix", "MeatCutBaked", "WheatPowder", "Milk"],
+      "action": "Boil",
+      "resultFoods": ["Stew"]
+    },
+    {
+      "materialFoods": ["MeatCutBaked","CurryPowder"],
+      "action": "Mix",
+      "resultFoods": ["CurryMeat"]
+    },
+    {
+      "materialFoods": ["Patty","CabbageCut","TomatoCut","Bread"],
+      "action": "Mix",
+      "resultFoods": ["Hamburger"]
+    },
+    {
+      "materialFoods": ["Egg"],
+      "action": "Bake",
+      "resultFoods": ["EggBaked"]
+    },
+    {
+      "materialFoods": ["CornDog","TomatoPaste"],
+      "action": "Mix",
+      "resultFoods": ["CornDogPerfect"]
+    },
+    {
+      "materialFoods": ["CornDogRaw"],
+      "action": "Bake",
+      "resultFoods": ["CornDog"]
+    },
+    {
+      "materialFoods": ["Sausage","Batter"],
+      "action": "Mix",
+      "resultFoods": ["CornDogRaw"]
+    },
+    {
+      "materialFoods": ["MeatMince"],
+      "action": "Boil",
+      "resultFoods": ["Sausage"]
+    },
+    {
+      "materialFoods": ["MeatMince"],
+      "action": "Bake",
+      "resultFoods": ["Patty"]
+    },
+    {
+      "materialFoods": ["MeatCut"],
+      "action": "Cut",
+      "resultFoods": ["MeatMince"]
+    },
+    {
+      "materialFoods": ["EggBeaten","Milk","WheatPowder"],
+      "action": "Mix",
+      "resultFoods": ["Batter"]
+    },
     {
       "materialFoods": ["Cabbage"],
       "action": "Cut",
