@@ -9,6 +9,13 @@ public class MockPlayer : MonoBehaviour
     [SerializeField] private IFoodService foodService;
     [SerializeField] private Vector3 heldFoodOffset = new Vector3(0, 1f, 0f);
     [SerializeField] private RecipeModalUI recipeModal;
+    [SerializeField] private HPBoard hpBoard;
+
+    // 敵から攻撃を受けたときに呼び出す
+    public void ReceiveDamage(float damage)
+    {
+        hpBoard?.TakeDamage(damage);
+    }
 
     private Food heldFood = null;
 
