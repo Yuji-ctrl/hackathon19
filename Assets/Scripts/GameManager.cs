@@ -1,13 +1,24 @@
-// GameManager.cs
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public bool IsGameStarted { get; private set; } = false;
+    [SerializeField] private EnemyBarrageShooter3D enemyShooter;
+    // 食べ物生成スクリプトもあれば同じように参照を持つ
+    // [SerializeField] private FoodSpawner foodSpawner;
 
-    public void StartGame()
+    private bool isGameStarted = false;
+
+    public void OnStartButtonPressed()
     {
-        IsGameStarted = true;
-        // 必要ならここで敵スポーン用コルーチン開始など
+        if (isGameStarted) return;
+        isGameStarted = true;
+
+        // ここで弾幕と食べ物生成を開始
+        if (enemyShooter != null)
+        {
+            enemyShooter.StartFire();
+        }
+
+        // if (foodSpawner != null) foodSpawner.StartSpawn();
     }
 }
