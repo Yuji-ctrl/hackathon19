@@ -17,10 +17,10 @@ public class FoodSpawner : MonoBehaviour
     
     private void Start()
     {
-        StartSpawning();
+        // 最初は停止状態
     }
     
-    private void StartSpawning()
+    public void StartSpawning()
     {
         if (spawnCoroutine != null)
         {
@@ -28,6 +28,7 @@ public class FoodSpawner : MonoBehaviour
         }
         spawnCoroutine = StartCoroutine(SpawnRoutine());
     }
+
     
     private IEnumerator SpawnRoutine()
     {

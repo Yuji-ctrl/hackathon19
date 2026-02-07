@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07965bb4071cd4ef2a3a92cb72d015d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RecipeModalItem
-  iconSize: 30
+  iconSize: 40
   plusIconSize: 10
   arrowIconSize: 10
   actionIconSize: 20

@@ -9,6 +9,7 @@ public class Food : MonoBehaviour
 
     [SerializeField] float detectRadius = 1f;
     [SerializeField] float resultSpreadRadius = 1f;
+    [SerializeField] float modelScale = 1f;
 
 
     public void Initialize(FoodConfig config, IFoodService service)
@@ -20,6 +21,7 @@ public class Food : MonoBehaviour
         var model = service.LoadFBXModel(config.name);
         model.transform.SetParent(transform);
         model.transform.localPosition = Vector3.zero;
+        model.transform.localScale = model.transform.localScale * modelScale;
     }
 
     /// <summary>

@@ -9704,6 +9704,8 @@ GameObject:
   - component: {fileID: 3654739681354966537}
   - component: {fileID: -2691269063811292858}
   - component: {fileID: -5672750267622527053}
+  - component: {fileID: 368288969925591338}
+  - component: {fileID: 7008505044030309624}
   m_Layer: 8
   m_Name: VFX_Fire_01_Small_Simple
   m_TagString: Untagged
@@ -14679,6 +14681,40 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &368288969925591338
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781949194303238870}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.53584456
+  m_Center: {x: -0.3920226, y: 0.62392306, z: 0}
+--- !u!114 &7008505044030309624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781949194303238870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c7d73ca8f8942ceabea511ada99e97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MockActionBall
+  action: Bake
 --- !u!1 &4011211046309551372
 GameObject:
   m_ObjectHideFlags: 0

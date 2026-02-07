@@ -3,8 +3,8 @@ using System.Collections;
 
 public class GameStartManager : MonoBehaviour
 {
-    [SerializeField] private GameObject gameStartCanvas;
-    [SerializeField] private float fadeDuration = 0.5f; // ƒtƒF[ƒhƒAƒEƒgŠÔ
+    [SerializeField] private GameObject gameStartButton;
+    [SerializeField] private float fadeDuration = 0.5f; // ï¿½tï¿½Fï¿½[ï¿½hï¿½Aï¿½Eï¿½gï¿½ï¿½ï¿½ï¿½
 
     public void OnStartButtonClick()
     {
@@ -13,12 +13,12 @@ public class GameStartManager : MonoBehaviour
 
     private IEnumerator FadeOutCanvas()
     {
-        CanvasGroup canvasGroup = gameStartCanvas.GetComponent<CanvasGroup>();
+        CanvasGroup canvasGroup = gameStartButton.GetComponent<CanvasGroup>();
 
         if (canvasGroup == null)
         {
-            // CanvasGroup ‚ª‚È‚¯‚ê‚Îì¬
-            canvasGroup = gameStartCanvas.AddComponent<CanvasGroup>();
+            // CanvasGroup ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½Îì¬
+            canvasGroup = gameStartButton.AddComponent<CanvasGroup>();
         }
 
         float elapsedTime = 0f;
@@ -30,7 +30,7 @@ public class GameStartManager : MonoBehaviour
             yield return null;
         }
 
-        // Š®‘S‚É“§–¾‚É‚È‚Á‚½‚ç”ñƒAƒNƒeƒBƒu‚É‚·‚é
-        gameStartCanvas.SetActive(false);
+        // ï¿½ï¿½ï¿½Sï¿½É“ï¿½ï¿½ï¿½ï¿½É‚È‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½Nï¿½eï¿½Bï¿½uï¿½É‚ï¿½ï¿½ï¿½
+        gameStartButton.SetActive(false);
     }
 }
