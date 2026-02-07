@@ -84,7 +84,7 @@ public class KnifeShooter : MonoBehaviour
                 rb.useGravity = false;
             }
 
-            bullet.transform.rotation = Quaternion.LookRotation(dir);
+            bullet.transform.rotation = Quaternion.Euler(0,0,270);
         }
     }
 
