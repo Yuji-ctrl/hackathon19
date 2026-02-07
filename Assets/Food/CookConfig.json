@@ -1,0 +1,216 @@
+{
+  "foods": [
+    {
+      "name": "Apple",
+      "isNatural": true,
+      "attack": 5
+    },
+    {
+      "name": "Bread",
+      "isNatural": false,
+      "attack": 10
+    },
+    {
+      "name": "BreadDough",
+      "isNatural": false,
+      "attack": 2
+    },
+    {
+      "name": "Cabbage",
+      "isNatural": true,
+      "attack": 1
+    },
+    {
+      "name": "CabbageCut",
+      "isNatural": false,
+      "attack": 5
+    },
+    {
+      "name": "Carrot",
+      "isNatural": true,
+      "attack": 1
+    },
+    {
+      "name": "CarrotCut",
+      "isNatural": false,
+      "attack": 5
+    },
+    {
+      "name": "CurryNut",
+      "isNatural": true,
+      "attack": 1
+    },
+    {
+      "name": "CurryMix",
+      "isNatural": false,
+      "attack": 10
+    },
+    {
+      "name": "CurryPowder",
+      "isNatural": false,
+      "attack": 2
+    },
+    {
+      "name": "Curry",
+      "isNatural": false,
+      "attack": 30
+    },
+    {
+      "name": "CurryRice",
+      "isNatural": false,
+      "attack": 50
+    },
+    {
+      "name": "Egg",
+      "isNatural": true,
+      "attack": 5
+    },
+    {
+      "name": "Meat",
+      "isNatural": true,
+      "attack": 1
+    },
+    {
+      "name": "MeatCut",
+      "isNatural": false,
+      "attack": 2
+    },
+    {
+      "name": "MeatCutBaked",
+      "isNatural": false,
+      "attack": 10
+    },
+    {
+      "name": "Onion",
+      "isNatural": true,
+      "attack": 1
+    },
+    {
+      "name": "OnionCut",
+      "isNatural": false,
+      "attack": 5
+    },
+    {
+      "name": "Potato",
+      "isNatural": true,
+      "attack": 1
+    },
+    {
+      "name": "PotatoCut",
+      "isNatural": false,
+      "attack": 2
+    },
+    {
+      "name": "Rice",
+      "isNatural": true,
+      "attack": 1
+    },
+    {
+      "name": "RiceGrain",
+      "isNatural": false,
+      "attack": 2
+    },
+    {
+      "name": "RiceBall",
+      "isNatural": false,
+      "attack": 10
+    },
+    {
+      "name": "Wheat",
+      "isNatural": true,
+      "attack": 1
+    },
+    {
+      "name": "WheatPowder",
+      "isNatural": false,
+      "attack": 2
+    },
+    {
+      "name": "Yeast",
+      "isNatural": true,
+      "attack": 1
+    },
+    {
+      "name": "Milk",
+      "isNatural": true,
+      "attack": 5
+    }
+  ],
+  "recipes": [
+    {
+      "materialFoods": ["Cabbage"],
+      "action": "Cut",
+      "resultFoods": ["CabbageCut"]
+    },
+    {
+      "materialFoods": ["Carrot"],
+      "action": "Cut",
+      "resultFoods": ["CarrotCut"]
+    },
+    {
+      "materialFoods": ["Meat"],
+      "action": "Cut",
+      "resultFoods": ["MeatCut"]
+    },
+    {
+      "materialFoods": ["MeatCut"],
+      "action": "Bake",
+      "resultFoods": ["MeatCutBaked"]
+    },
+    {
+      "materialFoods": ["Onion"],
+      "action": "Cut",
+      "resultFoods": ["OnionCut"]
+    },
+    {
+      "materialFoods": ["Potato"],
+      "action": "Cut",
+      "resultFoods": ["PotatoCut"]
+    },
+    {
+      "materialFoods": ["Wheat"],
+      "action": "Cut",
+      "resultFoods": ["WheatPowder"]
+    },
+    {
+      "materialFoods": ["WheatPowder", "Yeast"],
+      "action": "Mix",
+      "resultFoods": ["BreadDough"]
+    },
+    {
+      "materialFoods": ["BreadDough"],
+      "action": "Bake",
+      "resultFoods": ["Bread"]
+    },
+    {
+      "materialFoods": ["Rice"],
+      "action": "Cut",
+      "resultFoods": ["RiceGrain"]
+    },
+    {
+      "materialFoods": ["RiceGrain"],
+      "action": "Boil",
+      "resultFoods": ["RiceBall"]
+    },
+    {
+      "materialFoods": ["CurryNut"],
+      "action": "Cut",
+      "resultFoods": ["CurryPowder"]
+    },
+    {
+      "materialFoods": ["PotatoCut", "OnionCut", "CarrotCut"],
+      "action": "Boil",
+      "resultFoods": ["CurryMix"]
+    },
+    {
+      "materialFoods": ["CurryMix", "MeatCutBaked", "CurryPowder", "WheatPowder"],
+      "action": "Boil",
+      "resultFoods": ["Curry"]
+    },
+    {
+      "materialFoods": ["Curry", "RiceBall"],
+      "action": "Mix",
+      "resultFoods": ["CurryRice"]
+    }
+  ]
+}
