@@ -793,13 +793,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1567780815}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4757b7eb512124741a9faabca8601e1f, type: 3}
+  m_Script: {fileID: 11500000, guid: 377d883260a960a4998f884376727561, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBarrageShooter3D
   bulletPrefab: {fileID: 1781949194303238870, guid: dd986d04bcc6dc748a53d8c3d1d42a6d, type: 3}
   muzzle: {fileID: 0}
-  speed: 15
-  interval: 3
+  bulletsPerWave: 1
+  wavesPerSecond: 1
+  bulletSpeed: 1
+  fixedY: 0
+  lockBulletY: 1
+  startOnEnable: 1
 --- !u!1 &1603580714 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 913333886326777667, guid: cd44af195fe2e02459c0ea4f9a9fc854, type: 3}
