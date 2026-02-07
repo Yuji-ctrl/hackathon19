@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6609695523249139219}
   - component: {fileID: 5397316038221488649}
   - component: {fileID: 2836888380697916861}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Heat Distortion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4856,7 +4856,7 @@ GameObject:
   - component: {fileID: 902102037813510759}
   - component: {fileID: 9101080872212838530}
   - component: {fileID: 4795224724292353107}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Flames
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9703,7 +9703,8 @@ GameObject:
   - component: {fileID: 1781949194303238871}
   - component: {fileID: 3654739681354966537}
   - component: {fileID: -2691269063811292858}
-  m_Layer: 0
+  - component: {fileID: -5672750267622527053}
+  m_Layer: 8
   m_Name: VFX_Fire_01_Small_Simple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14651,6 +14652,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletLifetime3D
   lifeSeconds: 3000
+--- !u!54 &-5672750267622527053
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781949194303238870}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4011211046309551372
 GameObject:
   m_ObjectHideFlags: 0
@@ -14662,7 +14690,7 @@ GameObject:
   - component: {fileID: 649983320598086826}
   - component: {fileID: 296230944595500747}
   - component: {fileID: 2310712263743608051}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19516,7 +19544,7 @@ GameObject:
   - component: {fileID: 216659366619305348}
   - component: {fileID: 4811017566070180577}
   - component: {fileID: 548362389489512242}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Flames Secondary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
