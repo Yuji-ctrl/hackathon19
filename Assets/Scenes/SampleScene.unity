@@ -908,6 +908,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1587330016}
+        m_TargetAssemblyTypeName: GameStartManager, Assembly-CSharp
+        m_MethodName: OnStartButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1037213063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1298,12 +1310,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3eb255a708fce4eb11b49c1115cbcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 5997947409986893067, guid: 02c7ac132e03530479bd4c401ad5107b, type: 3}
   muzzle: {fileID: 0}
   bulletsPerWave: 1
   wavesPerSecond: 1
-  bulletSpeed: 12
-  fixedY: 0
+  bulletSpeed: 1
+  fixedY: 0.5
   lockBulletY: 1
   startOnEnable: 0
 --- !u!1 &1587330013
@@ -1316,6 +1328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1587330015}
   - component: {fileID: 1587330014}
+  - component: {fileID: 1587330016}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1336,6 +1349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   enemyShooter: {fileID: 1567780827}
+  knifeShooter: {fileID: 1567780832}
 --- !u!4 &1587330015
 Transform:
   m_ObjectHideFlags: 0
@@ -1351,6 +1365,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1587330016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587330013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65183c1db21abce408eb0e9628e84c32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  gameStartCanvas: {fileID: 331866169}
+  fadeDuration: 0.5
 --- !u!1 &1603580714 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 913333886326777667, guid: cd44af195fe2e02459c0ea4f9a9fc854, type: 3}
