@@ -1153,6 +1153,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3454ecad4acf10240925d7ab5ef7ce2b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1567780831}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3454ecad4acf10240925d7ab5ef7ce2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1567780832}
   m_SourcePrefab: {fileID: 100100000, guid: 3454ecad4acf10240925d7ab5ef7ce2b, type: 3}
 --- !u!1 &1434179873
 GameObject:
@@ -1259,7 +1262,7 @@ MonoBehaviour:
   bulletSpeed: 1
   fixedY: 0
   lockBulletY: 1
-  startOnEnable: 1
+  startOnEnable: 0
 --- !u!136 &1567780831
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1283,6 +1286,26 @@ CapsuleCollider:
   m_Height: 0.38657418
   m_Direction: 1
   m_Center: {x: 0.016680518, y: -0.018215, z: -0.059312016}
+--- !u!114 &1567780832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567780815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3eb255a708fce4eb11b49c1115cbcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  bulletPrefab: {fileID: 0}
+  muzzle: {fileID: 0}
+  bulletsPerWave: 1
+  wavesPerSecond: 1
+  bulletSpeed: 12
+  fixedY: 0
+  lockBulletY: 1
+  startOnEnable: 0
 --- !u!1 &1587330013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,7 +1335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4ffffd382423046aebce63f3ac4042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  enemyShooter: {fileID: 0}
+  enemyShooter: {fileID: 1567780827}
 --- !u!4 &1587330015
 Transform:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private EnemyBarrageShooter3D enemyShooter;
+    [SerializeField] private KnifeShooter knifeShooter;
     // 食べ物生成スクリプトもあれば同じように参照を持つ
     // [SerializeField] private FoodSpawner foodSpawner;
 
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
         {
             enemyShooter.StartFire();
         }
+        if(knifeShooter != null) { knifeShooter.StartFire(); }
 
         // if (foodSpawner != null) foodSpawner.StartSpawn();
     }
