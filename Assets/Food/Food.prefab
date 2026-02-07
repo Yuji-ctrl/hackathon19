@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8cce71c7fde4a0eb26924afcad22f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Food
-  detectRadius: 1
+  detectRadius: 2
   resultSpreadRadius: 0.5
 --- !u!135 &4251615072081600726
 SphereCollider:

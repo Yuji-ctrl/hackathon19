@@ -39,13 +39,22 @@ public class FoodGenerator : MonoBehaviour, IFoodService
     CookConfig config = new();
     [SerializeField] Food foodPrefab;
 
+    /// <summary>パース済みのCookConfigを外部に公開</summary>
+    public CookConfig Config => config;
+
     // (action, materialFood) → 該当レシピの辞書。Awakeで1回だけ構築
     readonly Dictionary<(string action, string food), List<Recipe>> recipeIndex = new();
+
+    [SerializeField] RecipeModalUI recipeModal;
 
     void Awake()
     {
         config = JsonConvert.DeserializeObject<CookConfig>(jsonFile.text);
         BuildRecipeIndex();
+
+        // モーダルUIにCookConfigを渡して初期化
+        if (recipeModal != null)
+            recipeModal.InitializeNavigator(config);
     }
 
     void BuildRecipeIndex()

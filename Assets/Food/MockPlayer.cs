@@ -8,6 +8,7 @@ public class MockPlayer : MonoBehaviour
     [SerializeField] private float pickupRadius = 3f;
     [SerializeField] private IFoodService foodService;
     [SerializeField] private Vector3 heldFoodOffset = new Vector3(0, 1f, 0f);
+    [SerializeField] private RecipeModalUI recipeModal;
 
     private Food heldFood = null;
 
@@ -81,6 +82,7 @@ public class MockPlayer : MonoBehaviour
                 Destroy(heldFood.gameObject);
                 Debug.Log($"Foodを破壊しました: {heldFood.Config.name}");
                 heldFood = null;
+                recipeModal?.Hide();
             }
         }
     }
@@ -110,8 +112,8 @@ public class MockPlayer : MonoBehaviour
         if (closestFood != null)
         {
             heldFood = closestFood;
-            // 拾い上げたFoodを非表示にするか、プレイヤーの手となるよう配置することも可能
             Debug.Log($"Foodを拾い上げました: {heldFood.Config.name}");
+            recipeModal?.Show(heldFood);
         }
     }
 
@@ -133,5 +135,6 @@ public class MockPlayer : MonoBehaviour
 
         Debug.Log($"Foodを設置しました: {heldFood.Config.name}");
         heldFood = null;
+        recipeModal?.Hide();
     }
 }
