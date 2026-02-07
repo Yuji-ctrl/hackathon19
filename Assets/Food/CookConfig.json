@@ -1,0 +1,20 @@
+{
+  "foods": [
+    {
+      "name": "Kyabetu"
+    },
+    {
+      "name": "Onion"
+    },
+    {
+      "name": "Potato"
+    }
+  ],
+  "recipes": [
+    {
+      "materialFoods": ["Kyabetu", "Onion"],
+      "action": "Mix",
+      "resultFoods": ["Potato"]
+    }
+  ]
+}
