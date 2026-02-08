@@ -210,10 +210,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4984d3ed751a6741b29cf04a88bf980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  playerHPText: {fileID: 0}
-  enemyHPText: {fileID: 0}
-  mockPlayer: {fileID: 0}
-  enemyObject: {fileID: 0}
+  playerHPText: {fileID: 1044458951}
+  enemyHPText: {fileID: 1958031652}
+  mockPlayer: {fileID: 1641039907}
+  enemyObject: {fileID: 1567780815}
 --- !u!1 &62307377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1958,6 +1958,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 839922003754563176, guid: 7b600e333820143f79606d89ec78416f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1641039906}
+    - targetCorrespondingSourceObject: {fileID: 839922003754563176, guid: 7b600e333820143f79606d89ec78416f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1641039907}
   m_SourcePrefab: {fileID: 100100000, guid: 7b600e333820143f79606d89ec78416f, type: 3}
 --- !u!4 &1641039904 stripped
 Transform:
@@ -1988,6 +1991,24 @@ MonoBehaviour:
   OnDie:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1641039907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641039905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c94a73cef704f6782f14ccebc3e004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MockPlayer
+  moveSpeed: 5
+  mainCamera: {fileID: 0}
+  pickupRadius: 3
+  heldFoodOffset: {x: 0, y: 1, z: 0}
+  recipeModal: {fileID: 0}
+  hpBoard: {fileID: 0}
 --- !u!1 &1746864655 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6815695667544492800, guid: cd44af195fe2e02459c0ea4f9a9fc854, type: 3}
