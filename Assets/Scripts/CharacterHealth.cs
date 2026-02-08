@@ -7,7 +7,11 @@ public class CharacterHealth : MonoBehaviour
     [SerializeField] private int maxHp = 100;
 
     // 現在のHP（実行中に変動する値）
+    //public int CurrentHP => currentHp;
     private int currentHp;
+    // 追加：外部から読み取り専用でアクセスできる
+    public int CurrentHP => currentHp;
+    public int MaxHP => maxHp;
 
     // HPが変化したときにUIなどを更新するためのイベント
     public UnityEvent<int> OnHpChanged;
