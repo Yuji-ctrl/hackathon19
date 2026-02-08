@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 59093984}
   - component: {fileID: 59093987}
   - component: {fileID: 59093986}
-  - component: {fileID: 59093985}
+  - component: {fileID: 59093988}
   m_Layer: 5
   m_Name: HPBoard
   m_TagString: Untagged
@@ -160,18 +160,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &59093985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59093983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4984d3ed751a6741b29cf04a88bf980, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HPBoard
 --- !u!114 &59093986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +198,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59093983}
   m_CullTransparentMesh: 1
+--- !u!114 &59093988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59093983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4984d3ed751a6741b29cf04a88bf980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  playerHPText: {fileID: 0}
+  enemyHPText: {fileID: 0}
+  mockPlayer: {fileID: 0}
+  enemyObject: {fileID: 0}
 --- !u!1 &62307377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1946,16 +1950,44 @@ PrefabInstance:
       propertyPath: heldFoodOffset.y
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5182365657220675832, guid: 7b600e333820143f79606d89ec78416f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 839922003754563176, guid: 7b600e333820143f79606d89ec78416f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1641039906}
   m_SourcePrefab: {fileID: 100100000, guid: 7b600e333820143f79606d89ec78416f, type: 3}
 --- !u!4 &1641039904 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1224640032662109174, guid: 7b600e333820143f79606d89ec78416f, type: 3}
   m_PrefabInstance: {fileID: 1641039903}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1641039905 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 839922003754563176, guid: 7b600e333820143f79606d89ec78416f, type: 3}
+  m_PrefabInstance: {fileID: 1641039903}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1641039906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641039905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e50464fb1ca954ba4d7d23588b65fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  maxHp: 100
+  OnHpChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1746864655 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6815695667544492800, guid: cd44af195fe2e02459c0ea4f9a9fc854, type: 3}
