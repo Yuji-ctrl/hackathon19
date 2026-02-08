@@ -19,7 +19,7 @@ public class FistMovement : MonoBehaviour
         else
         {
             // ターゲット未設定時は自分のforward
-            rb.linearVelocity = transform.forward * speed;
+            rb.linearVelocity = -Vector3.right* speed;
         }
     }
 
