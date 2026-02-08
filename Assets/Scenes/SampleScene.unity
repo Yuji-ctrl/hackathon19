@@ -1973,6 +1973,7 @@ MonoBehaviour:
   heldFoodOffset: {x: 0, y: 1, z: 0}
   recipeModal: {fileID: 0}
   hpBoard: {fileID: 0}
+  seikenPrefab: {fileID: 7067444034532302793, guid: 133a42750d1279f4685fc4a9eac24abb, type: 3}
 --- !u!1 &1746864655 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6815695667544492800, guid: cd44af195fe2e02459c0ea4f9a9fc854, type: 3}

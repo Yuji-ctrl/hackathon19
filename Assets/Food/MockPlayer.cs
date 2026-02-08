@@ -10,6 +10,7 @@ public class MockPlayer : MonoBehaviour
     [SerializeField] private Vector3 heldFoodOffset = new Vector3(0, 1f, 0f);
     [SerializeField] private RecipeModalUI recipeModal;
     [SerializeField] private HPBoard hpBoard;
+    [SerializeField] private GameObject seikenPrefab;
 
     // 敵から攻撃を受けたときに呼び出す
     public void ReceiveDamage(float damage)
@@ -85,6 +86,8 @@ public class MockPlayer : MonoBehaviour
         {
             if (heldFood != null)
             {
+                var heldFoodConfig = heldFood.Config;
+                Instantiate(seikenPrefab, transform.position, Quaternion.identity);
                 // 手に持っている食べ物を破壊
                 Destroy(heldFood.gameObject);
                 Debug.Log($"Foodを破壊しました: {heldFood.Config.name}");
