@@ -29,4 +29,25 @@ public class PlayerHealth : MonoBehaviour
             OnDie?.Invoke();
         }
     }
+
+    // ★ここから追加（どちらか片方だけ残す）
+
+    // 1) コライダーが Trigger でない場合
+    private void OnCollisionEnter(Collision collision)
+    {
+        // 弾に "Bullet" タグを付けておく
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            TakeDamage(10); // とりあえず 10 ダメージ
+        }
+    }
+
+    // 2) コライダーが Trigger の場合
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            TakeDamage(10);
+        }
+    }
 }

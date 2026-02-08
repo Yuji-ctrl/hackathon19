@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: knife1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d2e2a853635ce0541a57bf54bb3b3249, type: 3}
+      propertyPath: m_TagString
+      value: Ballet
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d2e2a853635ce0541a57bf54bb3b3249, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.15
@@ -166,3 +170,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MockActionBall
   action: Cut
+  cooldownTime: 0.5
