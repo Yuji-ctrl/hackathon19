@@ -8,7 +8,7 @@ public class HPBoard : MonoBehaviour
 
     [SerializeField] private MockPlayer mockPlayer;
     [SerializeField] private GameObject enemyObject; // panCreature
-    private Health enemyHealth; // 敵の Health 参照
+    private CharacterHealth enemyHealth; // 敵の Health 参照
 
     private float playerHP;
     private float maxPlayerHP;
@@ -22,7 +22,7 @@ public class HPBoard : MonoBehaviour
         // 敵のHealthコンポーネントを取得
         if (enemyObject != null)
         {
-            enemyHealth = enemyObject.GetComponent<Health>();
+            enemyHealth = enemyObject.GetComponent<CharacterHealth>();
         }
 
         UpdateHPDisplay();
