@@ -12,15 +12,18 @@ public class FistMovement : MonoBehaviour
 
         if (target != null)
         {
-            // ターゲット方向の正規化ベクトル
-            Vector3 dir = (target.position - transform.position).normalized;
-            rb.linearVelocity = dir * speed;
+            // オブジェクトをターゲット方向に回転（正面を向ける）
+            transform.LookAt(target.position);
+
+            // forward方向（発射時点の敵向き）に速度を設定、直進
+            rb.linearVelocity = transform.forward * speed;
         }
         else
         {
-            // ターゲット未設定時は自分のforward
-            rb.linearVelocity = -Vector3.right* speed;
+            // ターゲット未設定時はデフォルト方向
+            rb.linearVelocity = -Vector3.right * speed;
         }
+
     }
 
     void Update()
