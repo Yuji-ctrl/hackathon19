@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57314af040ea79943bbfadc2646538b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletLifetime3D
-  lifeSeconds: 300
+  lifeSeconds: 10
 --- !u!54 &7617426016605589274
 Rigidbody:
   m_ObjectHideFlags: 0
