@@ -1180,8 +1180,8 @@ MonoBehaviour:
   spawnArea: {fileID: 1734815140246497438}
   playerPosition: {fileID: 3531099094569314188}
   foodGenerator: {fileID: 5511030750044145228}
-  spawnInterval: 2
-  maxFoodCount: 10
+  spawnInterval: 0.3
+  maxFoodCount: 15
 --- !u!1 &3050679575729072658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,6 +1293,7 @@ MonoBehaviour:
   foodModelDirPath: Foods
   foodPrefab: {fileID: 6092248105779024258, guid: 0aea7a37928474390afb7b28b8a1b2e7, type: 3}
   convergenceRate: 10
+  maxLimit: 5
   recipeModal: {fileID: 4229449866118939976}
 --- !u!1 &5653532537111969107
 GameObject:
@@ -1362,6 +1363,8 @@ MonoBehaviour:
   pickupRadius: 3
   heldFoodOffset: {x: 0, y: 1, z: 0}
   recipeModal: {fileID: 4229449866118939976}
+  hpBoard: {fileID: 0}
+  seikenPrefab: {fileID: 0}
 --- !u!33 &7675275553865505111
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -52,6 +52,7 @@ public class FoodGenerator : MonoBehaviour, IFoodService
     
     // 収束速度の係数（小さいほど早く収束、大きいほど遅く収束。上限は常に3）
     [SerializeField] float convergenceRate = 3f;
+    [SerializeField] float maxLimit = 3f;
 
     [SerializeField] RecipeModalUI recipeModal;
 
@@ -101,7 +102,6 @@ public class FoodGenerator : MonoBehaviour, IFoodService
             
             // レシピ数+1に収束関数を適用（上限3に固定、収束速度はconvergenceRateで調整）
             float x = terminalRecipeCount + 1;
-            float maxLimit = 3f;
             float normalizedWeight = maxLimit * x / (x + convergenceRate);
             naturalFoodWeights[i] = Mathf.Max(1, Mathf.RoundToInt(normalizedWeight * 100));
             totalWeight += naturalFoodWeights[i];

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CurryPowder
+  m_Name: Croquette
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 2100000, guid: d0516b14ed3a2481393914bf0e002fb9, type: 2}
   m_ModifiedSerializedProperties: 0
@@ -22,19 +22,23 @@ Material:
     RenderType: Opaque
   disabledShaderPasses:
   - MOTIONVECTORS
-  m_LockedProperties: 
+  m_LockedProperties: _OcclusionMap
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 635d2a615766d41e290813b382b54cfc, type: 3}
+        m_Texture: {fileID: 2800000, guid: 529c55e84e24d4d0985eebcc26affe6e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _BumpScale: 1
+    - _Metallic: 0
+    - _Smoothness: 0
+    - _SmoothnessTextureChannel: 0
     m_Colors:
-    - _BaseColor: {r: 0.5849056, g: 0.40590784, b: 0.32280168, a: 1}
-    - _Color: {r: 0.5849056, g: 0.4059078, b: 0.32280162, a: 1}
+    - _BaseColor: {r: 0.8018868, g: 0.58034223, b: 0.36690104, a: 1}
+    - _Color: {r: 0.8018868, g: 0.5803422, b: 0.366901, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &9049077475597688207

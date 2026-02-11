@@ -6,6 +6,11 @@
       "attack": 5
     },
     {
+      "name": "AppleCut",
+      "isNatural": false,
+      "attack": 10
+    },
+    {
       "name": "Bread",
       "isNatural": false,
       "attack": 10
@@ -24,6 +29,11 @@
       "name": "CabbageCut",
       "isNatural": false,
       "attack": 5
+    },
+    {
+      "name": "CabbageShredded",
+      "isNatural": false,
+      "attack": 10
     },
     {
       "name": "Carrot",
@@ -239,9 +249,139 @@
       "name": "Cream",
       "isNatural": false,
       "attack": 10
+    },
+    {
+      "name": "PotatoPaste",
+      "isNatural": false,
+      "attack": 10
+    },
+    {
+      "name": "BreadCrumbs",
+      "isNatural": false,
+      "attack": 10
+    },
+    {
+      "name": "CroquetteRaw",
+      "isNatural": false,
+      "attack": 10
+    },
+    {
+      "name": "Croquette",
+      "isNatural": false,
+      "attack": 40
+    },
+    {
+      "name": "TonkatsuRaw",
+      "isNatural": false,
+      "attack": 5
+    },
+    {
+      "name": "Tonkatsu",
+      "isNatural": false,
+      "attack": 40
+    },
+    {
+      "name": "TonkatsuPerfect",
+      "isNatural": false,
+      "attack": 70
+    },
+    {
+      "name": "CarrotPaste",
+      "isNatural": false,
+      "attack": 10
+    },
+    {
+      "name": "OnionPaste",
+      "isNatural": false,
+      "attack": 10
+    },
+    {
+      "name": "ApplePaste",
+      "isNatural": false,
+      "attack": 10
+    },
+    {
+      "name": "WheatWort",
+      "isNatural": false,
+      "attack": 5
+    },
+    {
+      "name": "Bear",
+      "isNatural": false,
+      "attack": 30
     }
   ],
   "recipes": [
+    {
+      "materialFoods": ["Wheat"],
+      "action": "Boil",
+      "resultFoods": ["WheatWort"]
+    },
+    {
+      "materialFoods": ["WheatWort","Yeast"],
+      "action": "Mix",
+      "resultFoods": ["Bear"]
+    },
+    {
+      "materialFoods": ["OnionCut"],
+      "action": "Cut",
+      "resultFoods": ["OnionPaste"]
+    },
+    {
+      "materialFoods": ["CarrotCut"],
+      "action": "Cut",
+      "resultFoods": ["CarrotPaste"]
+    },
+    {
+      "materialFoods": ["Apple"],
+      "action": "Cut",
+      "resultFoods": ["AppleCut"]
+    },
+    {
+      "materialFoods": ["AppleCut"],
+      "action": "Cut",
+      "resultFoods": ["ApplePaste"]
+    },
+    {
+      "materialFoods": ["TomatoPaste","ApplePaste","CarrotPaste","OnionPaste"],
+      "action": "Boil",
+      "resultFoods": ["WorcestershireSauce"]
+    },
+    {
+      "materialFoods": ["Meat","EggBeaten","BreadCrumbs"],
+      "action": "Mix",
+      "resultFoods": ["TonkatsuRaw"]
+    },
+    {
+      "materialFoods": ["TonkatsuRaw"],
+      "action": "Bake",
+      "resultFoods": ["Tonkatsu"]
+    },
+    {
+      "materialFoods": ["Tonkatsu","WorcestershireSauce"],
+      "action": "Mix",
+      "resultFoods": ["TonkatsuPerfect"]
+    },
+    {
+      "materialFoods": ["PotatoCut"],
+      "action": "Cut",
+      "resultFoods": ["PotatoPaste"]
+    },
+    {
+      "materialFoods": ["Bread"],
+      "action": "Cut",
+      "resultFoods": ["BreadCrumbs"]
+    },
+    {
+      "materialFoods": ["PotatoPaste","EggBeaten","BreadCrumbs"],
+      "action": "Mix",
+      "resultFoods": ["CroquetteRaw"]
+    },
+    {
+      "materialFoods": ["CroquetteRaw"],
+      "action": "Bake",
+      "resultFoods": ["Croquette"]
+    },
     {
       "materialFoods": ["Milk"],
       "action": "Cut",
@@ -346,6 +486,11 @@
       "materialFoods": ["Cabbage"],
       "action": "Cut",
       "resultFoods": ["CabbageCut"]
+    },
+    {
+      "materialFoods": ["CabbageCut"],
+      "action": "Cut",
+      "resultFoods": ["CabbageShredded"]
     },
     {
       "materialFoods": ["Carrot"],
